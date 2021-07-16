@@ -7,7 +7,6 @@ import 'package:my_portfolio/section_head.dart';
 import 'package:my_portfolio/section_services.dart';
 
 import 'constants.dart';
-import 'responsive.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -18,17 +17,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  final _controllerScroll = ScrollController();
+  
   @override
   Widget build(BuildContext context) {
-    final controllerScroll = ScrollController();
-
     return Scaffold(
-      drawer: Responsive.isMobile(context) ? Drawer(child: Menu(controllerScroll: controllerScroll)) : null,
+      drawer: Drawer(child: Menu(controllerScroll: _controllerScroll)),
       body: SingleChildScrollView(
-        controller: controllerScroll,
+        controller: _controllerScroll,
         child: Column(
           children: [
-            SectionHead(controllerScroll: controllerScroll),
+            SectionHead(controllerScroll: _controllerScroll),
             SizedBox(height: kDefaultPadding * 2),
             SectionAbout(),
             SectionService(),

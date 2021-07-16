@@ -31,7 +31,7 @@ class SectionService extends StatelessWidget {
       ),
       tablet: Container(
           margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
-          constraints: BoxConstraints(maxWidth: 650),
+          constraints: BoxConstraints(maxWidth: 1110),
           child: Column(
               children: [
                 SectionTitle(
@@ -39,8 +39,9 @@ class SectionService extends StatelessWidget {
                   title: "Offering Services",
                   subTitle: "My Strong Arenas",
                 ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Wrap(
+                    direction: Axis.horizontal,
+                    spacing: 20,
                     children: List.generate(services.length, (index) => ServiceCard(index: index))
                 )
               ]

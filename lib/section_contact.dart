@@ -80,7 +80,7 @@ class ContactBox extends StatelessWidget {
           )
       ),
       tablet: Container(
-          constraints: BoxConstraints(maxWidth: 1110),
+          constraints: BoxConstraints(maxWidth: 1099),
           margin: EdgeInsets.only(top: kDefaultPadding * 2),
           padding: EdgeInsets.all(kDefaultPadding * 3),
           decoration: BoxDecoration(
@@ -172,6 +172,8 @@ class ContactForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Responsive(
         mobile: Form(
             child: Wrap(
@@ -227,6 +229,9 @@ class ContactForm extends StatelessWidget {
                         labelText: "Description",
                         hintText: "Write some description",
                       ),
+                        keyboardType: TextInputType.multiline,
+                        minLines: 3,
+                        maxLines: 5
                     ),
                   ),
                   Center(
@@ -259,11 +264,12 @@ class ContactForm extends StatelessWidget {
         ),
         tablet: Form(
             child: Wrap(
+                alignment: WrapAlignment.center,
                 spacing: kDefaultPadding * 2.5,
                 runSpacing: kDefaultPadding * 1.5,
                 children: [
                   SizedBox(
-                    width: 470,
+                    width: size.width <= 970 ? double.infinity : 400,
                     child: TextFormField(
                       onChanged: (value) {},
                       decoration: InputDecoration(
@@ -273,7 +279,7 @@ class ContactForm extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 470,
+                    width: size.width <= 970 ? double.infinity : 400,
                     child: TextFormField(
                       onChanged: (value) {},
                       decoration: InputDecoration(
@@ -283,7 +289,7 @@ class ContactForm extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 470,
+                    width: size.width <= 970 ? double.infinity : 400,
                     child: TextFormField(
                       onChanged: (value) {},
                       decoration: InputDecoration(
@@ -293,7 +299,7 @@ class ContactForm extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 470,
+                    width: size.width <= 970 ? double.infinity : 400,
                     child: TextFormField(
                       onChanged: (value) {},
                       decoration: InputDecoration(
@@ -303,14 +309,15 @@ class ContactForm extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    // height: 300,
-                    // TextField by default cover the height, i tried to fix this problem but i cant
                     child: TextFormField(
                       onChanged: (value) {},
                       decoration: InputDecoration(
                         labelText: "Description",
                         hintText: "Write some description",
                       ),
+                        keyboardType: TextInputType.multiline,
+                        minLines: 3,
+                        maxLines: 5
                     ),
                   ),
                   SizedBox(height: kDefaultPadding * 2),
@@ -396,6 +403,9 @@ class ContactForm extends StatelessWidget {
                         labelText: "Description",
                         hintText: "Write some description",
                       ),
+                      keyboardType: TextInputType.multiline,
+                      minLines: 3,
+                      maxLines: 5
                     ),
                   ),
                   SizedBox(height: kDefaultPadding * 2),
