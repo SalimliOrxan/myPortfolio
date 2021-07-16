@@ -31,7 +31,6 @@ class SectionService extends StatelessWidget {
       ),
       tablet: Container(
           margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
-          constraints: BoxConstraints(maxWidth: 1110),
           child: Column(
               children: [
                 SectionTitle(

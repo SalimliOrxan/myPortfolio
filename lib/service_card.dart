@@ -94,8 +94,8 @@ class _ServiceCardState extends State<ServiceCard> {
         child: AnimatedContainer(
           duration: duration,
           margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
-          height: 256,
-          width: 256,
+          height: 200,
+          width: 200,
           decoration: BoxDecoration(
             color: services[widget.index].color,
             borderRadius: BorderRadius.circular(10),
@@ -107,8 +107,8 @@ class _ServiceCardState extends State<ServiceCard> {
               AnimatedContainer(
                   duration: duration,
                   padding: EdgeInsets.all(kDefaultPadding * 1.5),
-                  height: 120,
-                  width: 120,
+                  height: 110,
+                  width: 110,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
@@ -126,7 +126,7 @@ class _ServiceCardState extends State<ServiceCard> {
               SizedBox(height: kDefaultPadding),
               Text(
                 services[widget.index].title,
-                style: TextStyle(fontSize: 22),
+                style: TextStyle(fontSize: 18),
               ),
             ],
           ),
