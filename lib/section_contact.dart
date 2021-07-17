@@ -58,7 +58,7 @@ class ContactBox extends StatelessWidget {
                         color: Color(0xFFD9FFFC),
                         icon: WebsafeSvg.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
                         name: 'aaa',
-                        press: () {},
+                        press: () {}
                       ),
                       SocalCard(
                         color: Color(0xFFE4FFC7),
@@ -75,7 +75,7 @@ class ContactBox extends StatelessWidget {
                     ]
                 ),
                 SizedBox(height: kDefaultPadding * 2),
-                ContactForm(),
+                ContactForm()
               ]
           )
       ),
@@ -221,8 +221,6 @@ class ContactForm extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    // height: 300,
-                    // TextField by default cover the height, i tried to fix this problem but i cant
                     child: TextFormField(
                       onChanged: (value) {},
                       decoration: InputDecoration(

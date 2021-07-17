@@ -16,7 +16,6 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Responsive(
         mobile: Container(
           margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
@@ -32,9 +31,9 @@ class SectionTitle extends StatelessWidget {
                 color: Colors.black,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    color: color,
-                  ),
-                ),
+                    color: color
+                  )
+                )
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +42,7 @@ class SectionTitle extends StatelessWidget {
                   Text(
                     subTitle,
                     style:
-                    TextStyle(fontSize: 20, fontWeight: FontWeight.w200, color: kTextColor),
+                    TextStyle(fontSize: Responsive.isMobileMin(context) ? 16 : 20, fontWeight: FontWeight.w200, color: kTextColor),
                   ),
                   Text(
                     title,
@@ -51,24 +50,24 @@ class SectionTitle extends StatelessWidget {
                         .of(context)
                         .textTheme
                         .headline2!
-                        .copyWith(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
+                        .copyWith(fontSize: Responsive.isMobileMin(context) ? 26 : 30, fontWeight: FontWeight.bold, color: Colors.black),
                   )
-                ],
+                ]
               )
-            ],
-          ),
+            ]
+          )
         ),
         tablet: Container(
           margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
-          constraints: BoxConstraints(maxWidth: 1110),
-          height: 100,
+          width: double.infinity,
+          height: 85,
           child: Row(
             children: [
               Container(
                 margin: EdgeInsets.only(right: kDefaultPadding),
-                padding: EdgeInsets.only(bottom: 72),
+                padding: EdgeInsets.only(bottom: 50),
                 width: 8,
-                height: 100,
+                height: 85,
                 color: Colors.black,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
@@ -83,7 +82,7 @@ class SectionTitle extends StatelessWidget {
                   Text(
                     subTitle,
                     style:
-                    TextStyle(fontWeight: FontWeight.w200, color: kTextColor),
+                    TextStyle(fontSize: 25, fontWeight: FontWeight.w200, color: kTextColor),
                   ),
                   Text(
                     title,
@@ -91,7 +90,7 @@ class SectionTitle extends StatelessWidget {
                         .of(context)
                         .textTheme
                         .headline2!
-                        .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+                        .copyWith(fontSize: 35, fontWeight: FontWeight.bold, color: Colors.black),
                   )
                 ],
               )

@@ -11,6 +11,8 @@ class HireMeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobileMin = Responsive.isMobileMin(context);
+
     return Responsive(
         mobile: Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -44,12 +46,12 @@ class HireMeCard extends StatelessWidget {
                     children: [
                       Text(
                         "Starting New Project?",
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: isMobileMin ? 10 : 14, fontWeight: FontWeight.bold)
                       ),
                       SizedBox(height: kDefaultPadding / 2),
                       Text(
                         "Get an estimate for the new project",
-                        style: TextStyle(fontSize: 10, fontWeight: FontWeight.w200),
+                        style: TextStyle(fontSize: isMobileMin ? 6 : 10, fontWeight: FontWeight.w200)
                       )
                     ],
                   ),
@@ -59,14 +61,14 @@ class HireMeCard extends StatelessWidget {
                   imageSrc: "assets/images/hand.png",
                   press: () {},
                 )
-              ],
-            ),
-          ),
+              ]
+            )
+          )
         ),
         tablet: Container(
-          padding: EdgeInsets.all(kDefaultPadding * 2),
+          padding: EdgeInsets.all(kDefaultPadding),
           constraints: BoxConstraints(
-              maxWidth: 650
+              maxWidth: 600
           ),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -77,15 +79,15 @@ class HireMeCard extends StatelessWidget {
             children: [
               Image.asset(
                 "assets/images/email.png",
-                height: 80,
-                width: 80,
+                height: 50,
+                width: 50
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                 child: SizedBox(
-                  height: 80,
-                  child: VerticalDivider(),
-                ),
+                  height: 50,
+                  child: VerticalDivider()
+                )
               ),
               Expanded(
                 child: Column(
@@ -93,12 +95,12 @@ class HireMeCard extends StatelessWidget {
                   children: [
                     Text(
                       "Starting New Project?",
-                      style: TextStyle(fontSize: 42, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: kDefaultPadding / 2),
                     Text(
                       "Get an estimate for the new project",
-                      style: TextStyle(fontWeight: FontWeight.w200),
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200),
                     )
                   ],
                 ),

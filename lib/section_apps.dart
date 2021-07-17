@@ -28,7 +28,7 @@ class SectionApp extends StatelessWidget {
                 children: [
                   Transform.translate(
                     offset: Offset(0, -80),
-                    child: HireMeCard(),
+                    child: HireMeCard()
                   ),
                   SectionTitle(
                     title: "Recent Works",
@@ -69,7 +69,7 @@ class SectionApp extends StatelessWidget {
               SectionTitle(
                 title: "Recent Works",
                 subTitle: "My Strong Arenas",
-                color: Color(0xFFFFB100),
+                color: Color(0xFFFFB100)
               ),
               SizedBox(height: kDefaultPadding * 1.5),
               SizedBox(

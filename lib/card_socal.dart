@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/responsive.dart';
 
 import 'constants.dart';
 
@@ -24,6 +25,8 @@ class _SocalCardState extends State<SocalCard> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
+    final isMobileMin = Responsive.isMobileMin(context);
+
     return FittedBox(
       child: InkWell(
         onTap: () => widget.press(),
@@ -41,17 +44,23 @@ class _SocalCardState extends State<SocalCard> {
           decoration: BoxDecoration(
             color: widget.color,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [if (isHover) kDefaultCardShadow],
+            boxShadow: [if (isHover) kDefaultCardShadow]
           ),
           child: Row(
             children: [
               widget.icon,
-              SizedBox(width: kDefaultPadding),
-              Text(widget.name),
-            ],
-          ),
-        ),
-      ),
+              Visibility(
+                  visible: !isMobileMin,
+                  child: SizedBox(width: kDefaultPadding)
+              ),
+              Visibility(
+                  visible: !isMobileMin,
+                  child: Text(widget.name)
+              )
+            ]
+          )
+        )
+      )
     );
   }
 }

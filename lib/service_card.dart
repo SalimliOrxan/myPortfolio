@@ -22,6 +22,8 @@ class _ServiceCardState extends State<ServiceCard> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobileMin = Responsive.isMobileMin(context);
+
     return Responsive(
       mobile: InkWell(
         onTap: () {},
@@ -35,7 +37,7 @@ class _ServiceCardState extends State<ServiceCard> {
           duration: duration,
           margin: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
           padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          height: 110,
+          height: isMobileMin ? 90 : 110,
           width: MediaQuery.of(context).size.width - kDefaultPadding * 2,
           decoration: BoxDecoration(
             color: services[widget.index].color,
@@ -48,8 +50,8 @@ class _ServiceCardState extends State<ServiceCard> {
               AnimatedContainer(
                   duration: duration,
                   padding: EdgeInsets.all(kDefaultPadding),
-                  height: 90,
-                  width: 90,
+                  height: isMobileMin ? 70 : 90,
+                  width: isMobileMin ? 70 : 90,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
@@ -74,7 +76,7 @@ class _ServiceCardState extends State<ServiceCard> {
                     ),
                   Text(
                       services[widget.index].title,
-                      style: TextStyle(fontSize: 18)
+                      style: TextStyle(fontSize: isMobileMin ? 14 : 18)
                   )
                 ]
               ),
