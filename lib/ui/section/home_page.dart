@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/menu.dart';
-import 'package:my_portfolio/section_about.dart';
-import 'package:my_portfolio/section_apps.dart';
-import 'package:my_portfolio/section_contact.dart';
-import 'package:my_portfolio/section_head.dart';
-import 'package:my_portfolio/section_services.dart';
+import 'package:my_portfolio/ui/menu.dart';
+import 'package:my_portfolio/ui/section/section_about.dart';
+import 'package:my_portfolio/ui/section/section_apps.dart';
+import 'package:my_portfolio/ui/section/section_contact.dart';
+import 'package:my_portfolio/ui/section/section_head.dart';
+import 'package:my_portfolio/ui/section/section_services.dart';
 
-import 'constants.dart';
+import '../../data/constants.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);

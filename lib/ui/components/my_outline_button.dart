@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../constants.dart';
+import 'package:my_portfolio/data/constants.dart';
 
 class MyOutlineButton extends StatelessWidget {
   const MyOutlineButton({
@@ -16,27 +15,28 @@ class MyOutlineButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FittedBox(
-      child: OutlineButton(
-        padding: EdgeInsets.symmetric(
-          vertical: kDefaultPadding,
-          horizontal: kDefaultPadding * 2.5,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(50),
-        ),
-        borderSide: BorderSide(color: Color(0xFFEDEDED)),
+      child: OutlinedButton(
         onPressed: () => press(),
+        style: OutlinedButton.styleFrom(
+          backgroundColor: Color(0xFFE8F0F9),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+          padding: EdgeInsets.symmetric(
+              vertical: kDefaultPadding,
+              horizontal: kDefaultPadding * 2.5
+          ),
+          side: BorderSide(color: Color(0xFFEDEDED))
+        ),
         child: Row(
           children: [
             Image.asset(
               imageSrc,
-              height: 40,
+              height: 40
             ),
             SizedBox(width: kDefaultPadding),
             Text(text)
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

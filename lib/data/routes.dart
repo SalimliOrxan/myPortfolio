@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/home_page.dart';
+import 'package:my_portfolio/ui/section/home_page.dart';
 
 const String HOME = 'home';
 

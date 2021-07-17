@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/data/constants.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
-import '../constants.dart';
 import 'default_button.dart';
 
 class HireMeCard extends StatelessWidget {

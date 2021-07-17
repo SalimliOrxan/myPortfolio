@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
-import 'apps.dart';
-import 'constants.dart';
+import '../../data/apps.dart';
+import '../../data/constants.dart';
 
 class RecentWorkCard extends StatefulWidget {
 

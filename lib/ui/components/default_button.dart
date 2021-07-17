@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/data/constants.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
@@ -14,14 +15,16 @@ class DefaultButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      padding: EdgeInsets.symmetric(
-        vertical: Responsive.isMobile(context) ? 10 : 20,
-        horizontal: Responsive.isMobile(context) ? 10 : 20 * 2.5,
-      ),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-      color: Color(0xFFE8F0F9),
+    return TextButton(
       onPressed: () => press(),
+      style: TextButton.styleFrom(
+        backgroundColor: Color(0xFFE8F0F9),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+        padding: EdgeInsets.symmetric(
+          vertical: Responsive.isMobile(context) ? 10 : kDefaultPadding,
+          horizontal: Responsive.isMobile(context) ? 10 : kDefaultPadding * 2.5,
+        )
+      ),
       child: Row(
         children: [
           Image.asset(imageSrc, height: Responsive.isMobile(context) ? 20 : 40),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
-import 'constants.dart';
+import '../../data/constants.dart';
 
 class SocalCard extends StatefulWidget {
   const SocalCard({

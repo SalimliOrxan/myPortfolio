@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/ui/components/section_title.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
-import 'card_socal.dart';
-import 'components/section_title.dart';
-import 'constants.dart';
+import '../items/card_socal.dart';
+import '../../data/constants.dart';
 
 class SectionContact extends StatelessWidget {
 
@@ -234,16 +234,18 @@ class ContactForm extends StatelessWidget {
                   ),
                   Center(
                       child: FittedBox(
-                          child: FlatButton(
-                              padding: EdgeInsets.symmetric(
-                                vertical: 20,
-                                horizontal: 30,
-                              ),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                              color: Color(0xFFE8F0F9),
+                          child: TextButton(
                               onPressed: (){
 
                               },
+                              style: TextButton.styleFrom(
+                                backgroundColor: Color(0xFFE8F0F9),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 20,
+                                  horizontal: 30
+                                )
+                              ),
                               child: Row(
                                   children: [
                                     Image.asset("assets/images/contact_icon.png", height: 40),
@@ -321,16 +323,18 @@ class ContactForm extends StatelessWidget {
                   SizedBox(height: kDefaultPadding * 2),
                   Center(
                       child: FittedBox(
-                          child: FlatButton(
-                              padding: EdgeInsets.symmetric(
-                                vertical: Responsive.isMobile(context) ? 10 : 20,
-                                horizontal: Responsive.isMobile(context) ? 10 : 20 * 2.5,
-                              ),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                              color: Color(0xFFE8F0F9),
+                          child: TextButton(
                               onPressed: (){
 
                               },
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Color(0xFFE8F0F9),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: Responsive.isMobile(context) ? 10 : 20,
+                                    horizontal: Responsive.isMobile(context) ? 10 : 20 * 2.5,
+                                  )
+                              ),
                               child: Row(
                                   children: [
                                     Image.asset("assets/images/contact_icon.png", height: Responsive.isMobile(context) ? 20 : 40),
@@ -409,16 +413,18 @@ class ContactForm extends StatelessWidget {
                   SizedBox(height: kDefaultPadding * 2),
                   Center(
                       child: FittedBox(
-                          child: FlatButton(
-                              padding: EdgeInsets.symmetric(
-                                vertical: Responsive.isMobile(context) ? 10 : 20,
-                                horizontal: Responsive.isMobile(context) ? 10 : 20 * 2.5,
-                              ),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                              color: Color(0xFFE8F0F9),
+                          child: TextButton(
                               onPressed: (){
 
                               },
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Color(0xFFE8F0F9),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: Responsive.isMobile(context) ? 10 : 20,
+                                    horizontal: Responsive.isMobile(context) ? 10 : 20 * 2.5,
+                                  )
+                              ),
                               child: Row(
                                   children: [
                                     Image.asset("assets/images/contact_icon.png", height: Responsive.isMobile(context) ? 20 : 40),

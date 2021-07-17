@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/glass.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/ui/glass.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
-import 'menu.dart';
+import '../menu.dart';
 
 class SectionHead extends StatelessWidget {
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
 class ExperienceCard extends StatelessWidget {
   const ExperienceCard({

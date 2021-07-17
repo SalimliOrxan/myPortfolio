@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/ui/components/hireme_card.dart';
+import 'package:my_portfolio/ui/components/section_title.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
-import 'apps.dart';
-import 'components/hireme_card.dart';
-import 'components/section_title.dart';
-import 'constants.dart';
-import 'item_app.dart';
+import '../../data/apps.dart';
+import '../../data/constants.dart';
+import '../items/item_app.dart';
 
 class SectionApp extends StatelessWidget {
 

@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/data/constants.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
 class Glass extends StatelessWidget {
 

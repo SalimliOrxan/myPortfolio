@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/ui/components/section_title.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
-import 'components/section_title.dart';
-import 'constants.dart';
-import 'service_card.dart';
-import 'services.dart';
+import '../../data/constants.dart';
+import '../items/service_card.dart';
+import '../../data/services.dart';
 
 class SectionService extends StatelessWidget {
 

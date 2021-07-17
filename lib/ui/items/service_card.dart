@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/services.dart';
+import 'package:my_portfolio/data/services.dart';
 
-import 'constants.dart';
-import 'responsive.dart';
+import '../../data/constants.dart';
+import '../responsive.dart';
 
 class ServiceCard extends StatefulWidget {
   const ServiceCard({

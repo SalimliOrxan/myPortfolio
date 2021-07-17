@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/responsive.dart';
+import 'package:my_portfolio/ui/components/my_outline_button.dart';
+import 'package:my_portfolio/ui/responsive.dart';
 
-import 'card_experience.dart';
-import 'components/my_outline_button.dart';
-import 'constants.dart';
+import '../items/card_experience.dart';
+import '../../data/constants.dart';
 
 class SectionAbout extends StatelessWidget {
 
