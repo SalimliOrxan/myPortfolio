@@ -3,8 +3,8 @@ import 'package:my_portfolio/ui/responsive.dart';
 
 import '../../data/constants.dart';
 
-class SocalCard extends StatefulWidget {
-  const SocalCard({
+class SocialCard extends StatefulWidget {
+  const SocialCard({
     Key? key,
     required this.icon,
     required this.name,
@@ -18,10 +18,10 @@ class SocalCard extends StatefulWidget {
   final Function press;
 
   @override
-  _SocalCardState createState() => _SocalCardState();
+  _SocialCardState createState() => _SocialCardState();
 }
 
-class _SocalCardState extends State<SocalCard> {
+class _SocialCardState extends State<SocialCard> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {

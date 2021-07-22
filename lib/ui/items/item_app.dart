@@ -24,7 +24,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
 
   @override
   Widget build(BuildContext context) {
-    final isMobileMin = Responsive.isMobileMin(context);
+    final size = MediaQuery.of(context).size;
     final isTabletMin = Responsive.isTabletMin(context);
 
     return Responsive(
@@ -39,7 +39,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
           padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
           child: AnimatedContainer(
             duration: Duration(milliseconds: 200),
-            height: isMobileMin ? 180 : 200,
+            height: 200,
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -50,8 +50,8 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
               children: [
                 Container(
                     constraints: BoxConstraints(
-                        maxHeight: isMobileMin ? 180 : 200,
-                        maxWidth: isMobileMin ? 160 : 180
+                        maxHeight: 180,
+                        maxWidth: 160
                     ),
                     child: Image.asset(recentWorks[widget.index].image, fit: BoxFit.cover)
                 ),
@@ -64,18 +64,18 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                       children: [
                         Text(
                             recentWorks[widget.index].category.toUpperCase(),
-                            style: TextStyle(fontSize: isMobileMin ? 14 : 16)
+                            style: TextStyle(fontSize: size.width * 0.027)
                         ),
                         Text(
                           recentWorks[widget.index].title,
                           style: Theme.of(context)
                               .textTheme
                               .headline5!
-                              .copyWith(height: 1.5, fontSize: isMobileMin ? 12 : 14),
+                              .copyWith(height: 1.5, fontSize: size.width * 0.025),
                         ),
                         Text(
                           "View Details",
-                          style: TextStyle(fontSize: isMobileMin ? 12 : 14, decoration: TextDecoration.underline)
+                          style: TextStyle(fontSize: size.width * 0.023, decoration: TextDecoration.underline)
                         )
                       ]
                     )
@@ -126,7 +126,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                           style: Theme.of(context)
                               .textTheme
                               .headline5!
-                              .copyWith(height: 1.5, fontSize: 16),
+                              .copyWith(height: 1.5, fontSize: 14),
                         ),
                         Text(
                           "View Details",
@@ -179,7 +179,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                         style: Theme.of(context)
                             .textTheme
                             .headline5!
-                            .copyWith(height: 1.5, fontSize: 30),
+                            .copyWith(height: 1.5, fontSize: 16),
                       ),
                       Text(
                         "View Details",

@@ -11,7 +11,7 @@ class HireMeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobileMin = Responsive.isMobileMin(context);
+    final size = MediaQuery.of(context).size;
 
     return Responsive(
         mobile: Padding(
@@ -46,12 +46,12 @@ class HireMeCard extends StatelessWidget {
                     children: [
                       Text(
                         "Starting New Project?",
-                        style: TextStyle(fontSize: isMobileMin ? 10 : 14, fontWeight: FontWeight.bold)
+                        style: TextStyle(fontSize: size.width * 0.025, fontWeight: FontWeight.bold)
                       ),
                       SizedBox(height: kDefaultPadding / 2),
                       Text(
                         "Get an estimate for the new project",
-                        style: TextStyle(fontSize: isMobileMin ? 6 : 10, fontWeight: FontWeight.w200)
+                        style: TextStyle(fontSize: size.width * 0.023, fontWeight: FontWeight.w200)
                       )
                     ],
                   ),

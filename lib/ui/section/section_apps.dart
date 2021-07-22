@@ -13,6 +13,8 @@ class SectionApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isTabletMini = Responsive.isTabletMin(context);
+
     return Responsive(
         mobile: Container(
             margin: EdgeInsets.only(top: kDefaultPadding * 3),
@@ -22,7 +24,7 @@ class SectionApp extends StatelessWidget {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage("assets/images/recent_work_bg.png"),
-              ),
+              )
             ),
             child: Column(
                 children: [
@@ -36,15 +38,16 @@ class SectionApp extends StatelessWidget {
                     color: Color(0xFFFFB100),
                   ),
                   SizedBox(height: kDefaultPadding * 1.5),
-                  SizedBox(
-                      width: double.infinity,
-                      child: Wrap(
-                          spacing: kDefaultPadding,
-                          runSpacing: kDefaultPadding * 2,
-                          children: List.generate(
-                            recentWorks.length, (index) => RecentWorkCard(index: index, press: () {}),
-                          )
-                      )
+                  GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: recentWorks.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1,
+                          childAspectRatio: 3.5,
+                          mainAxisSpacing: kDefaultPadding
+                      ),
+                      shrinkWrap: true,
+                      itemBuilder: (_, int index) => RecentWorkCard(index: index, press: () {})
                   ),
                   SizedBox(height: kDefaultPadding * 5)
                 ]
@@ -72,14 +75,17 @@ class SectionApp extends StatelessWidget {
                 color: Color(0xFFFFB100)
               ),
               SizedBox(height: kDefaultPadding * 1.5),
-              SizedBox(
-                child: Wrap(
-                  spacing: kDefaultPadding,
-                  runSpacing: kDefaultPadding * 2,
-                  children: List.generate(
-                    recentWorks.length, (index) => RecentWorkCard(index: index, press: () {}),
+              GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: recentWorks.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: isTabletMini ? 1 : 2,
+                      childAspectRatio: isTabletMini ? 3.5 : 2.5,
+                      crossAxisSpacing: kDefaultPadding,
+                      mainAxisSpacing: kDefaultPadding
                   ),
-                )
+                  shrinkWrap: true,
+                  itemBuilder: (_, int index) => RecentWorkCard(index: index, press: () {})
               ),
               SizedBox(height: kDefaultPadding * 5)
             ]
@@ -109,16 +115,21 @@ class SectionApp extends StatelessWidget {
               SizedBox(height: kDefaultPadding * 1.5),
               SizedBox(
                 width: 1100,
-                child: Wrap(
-                  spacing: kDefaultPadding,
-                  runSpacing: kDefaultPadding * 2,
-                  children: List.generate(
-                    recentWorks.length, (index) => RecentWorkCard(index: index, press: () {}),
-                  ),
+                child: GridView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: recentWorks.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 2.5,
+                        crossAxisSpacing: kDefaultPadding,
+                        mainAxisSpacing: kDefaultPadding
+                    ),
+                    shrinkWrap: true,
+                    itemBuilder: (_, int index) => RecentWorkCard(index: index, press: () {})
                 ),
               ),
-              SizedBox(height: kDefaultPadding * 5),
-            ],
+              SizedBox(height: kDefaultPadding * 5)
+            ]
           )
         )
     );

@@ -22,7 +22,7 @@ class _ServiceCardState extends State<ServiceCard> {
 
   @override
   Widget build(BuildContext context) {
-    final isMobileMin = Responsive.isMobileMin(context);
+    final size = MediaQuery.of(context).size;
 
     return Responsive(
       mobile: InkWell(
@@ -37,21 +37,22 @@ class _ServiceCardState extends State<ServiceCard> {
           duration: duration,
           margin: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
           padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          height: isMobileMin ? 90 : 110,
-          width: MediaQuery.of(context).size.width - kDefaultPadding * 2,
+          height: size.width * 0.22,
+          width: size.width * 0.22,
           decoration: BoxDecoration(
             color: services[widget.index].color,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [if (isHover) kDefaultCardShadow],
           ),
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              SizedBox.shrink(),
               AnimatedContainer(
                   duration: duration,
-                  padding: EdgeInsets.all(kDefaultPadding),
-                  height: isMobileMin ? 70 : 90,
-                  width: isMobileMin ? 70 : 90,
+                  padding: EdgeInsets.all(kDefaultPadding / 2),
+                  height: size.width * 0.2,
+                  width: size.width * 0.2,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
@@ -61,13 +62,13 @@ class _ServiceCardState extends State<ServiceCard> {
                           offset: Offset(0, 20),
                           blurRadius: 30,
                           color: Colors.black.withOpacity(0.1),
-                        ),
-                    ],
+                        )
+                    ]
                   ),
                   child: services[widget.index].icon
               ),
-              SizedBox(),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   if(services[widget.index].iconPrefix != null)
                     Padding(
@@ -76,7 +77,7 @@ class _ServiceCardState extends State<ServiceCard> {
                     ),
                   Text(
                       services[widget.index].title,
-                      style: TextStyle(fontSize: isMobileMin ? 14 : 18)
+                      style: TextStyle(fontSize: size.width * 0.03)
                   )
                 ]
               ),
@@ -95,9 +96,9 @@ class _ServiceCardState extends State<ServiceCard> {
         hoverColor: Colors.transparent,
         child: AnimatedContainer(
           duration: duration,
-          margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
-          height: 200,
-          width: 200,
+          margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
+          height: size.width * 0.14,
+          width: size.width * 0.14,
           decoration: BoxDecoration(
             color: services[widget.index].color,
             borderRadius: BorderRadius.circular(10),
@@ -108,9 +109,9 @@ class _ServiceCardState extends State<ServiceCard> {
             children: [
               AnimatedContainer(
                   duration: duration,
-                  padding: EdgeInsets.all(kDefaultPadding * 1.5),
-                  height: 110,
-                  width: 110,
+                  padding: EdgeInsets.all(kDefaultPadding),
+                  height: size.width * 0.12,
+                  width: size.width * 0.12,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
@@ -128,11 +129,11 @@ class _ServiceCardState extends State<ServiceCard> {
               SizedBox(height: kDefaultPadding),
               Text(
                 services[widget.index].title,
-                style: TextStyle(fontSize: 18),
-              ),
-            ],
-          ),
-        ),
+                style: TextStyle(fontSize: size.width * 0.02)
+              )
+            ]
+          )
+        )
       ),
       desktop: InkWell(
         onTap: () {},

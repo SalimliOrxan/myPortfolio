@@ -3,7 +3,7 @@ import 'package:my_portfolio/ui/components/section_title.dart';
 import 'package:my_portfolio/ui/responsive.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
-import '../items/card_socal.dart';
+import '../items/card_social.dart';
 import '../../data/constants.dart';
 
 class SectionContact extends StatelessWidget {
@@ -23,8 +23,8 @@ class SectionContact extends StatelessWidget {
             color: Color(0xFF07E24A),
           ),
           ContactBox()
-        ],
-      ),
+        ]
+      )
     );
   }
 }
@@ -54,19 +54,19 @@ class ContactBox extends StatelessWidget {
                     spacing: 10,
                     runSpacing: 10,
                     children: [
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFD9FFFC),
                         icon: WebsafeSvg.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
                         name: 'aaa',
                         press: () {}
                       ),
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFE4FFC7),
                         icon: WebsafeSvg.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
                         name: 'bbb',
                         press: () {},
                       ),
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFE8F0F9),
                         icon: WebsafeSvg.asset("assets/images/ic_github.svg", width: 30, height: 30),
                         name: 'ccc',
@@ -95,19 +95,19 @@ class ContactBox extends StatelessWidget {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFD9FFFC),
                         icon: WebsafeSvg.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
                         name: 'aaa',
                         press: () {},
                       ),
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFE4FFC7),
                         icon: WebsafeSvg.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
                         name: 'bbb',
                         press: () {},
                       ),
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFE8F0F9),
                         icon: WebsafeSvg.asset("assets/images/ic_github.svg", width: 30, height: 30),
                         name: 'ccc',
@@ -136,19 +136,19 @@ class ContactBox extends StatelessWidget {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFD9FFFC),
                         icon: WebsafeSvg.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
                         name: 'aaa',
                         press: () {},
                       ),
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFE4FFC7),
                         icon: WebsafeSvg.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
                         name: 'bbb',
                         press: () {},
                       ),
-                      SocalCard(
+                      SocialCard(
                         color: Color(0xFFE8F0F9),
                         icon: WebsafeSvg.asset("assets/images/ic_github.svg", width: 30, height: 30),
                         name: 'ccc',
@@ -421,7 +421,7 @@ class ContactForm extends StatelessWidget {
                                   backgroundColor: Color(0xFFE8F0F9),
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
                                   padding: EdgeInsets.symmetric(
-                                    vertical: Responsive.isMobile(context) ? 10 : 20,
+                                    vertical: Responsive.isMobile(context) ? 5 : 20,
                                     horizontal: Responsive.isMobile(context) ? 10 : 20 * 2.5,
                                   )
                               ),
@@ -431,7 +431,7 @@ class ContactForm extends StatelessWidget {
                                     SizedBox(width: Responsive.isMobile(context) ? 5 : 20),
                                     Text(
                                         "Contact Me!",
-                                        style: TextStyle(fontSize: 10)
+                                        style: TextStyle(fontSize: 12)
                                     )
                                   ]
                               )
