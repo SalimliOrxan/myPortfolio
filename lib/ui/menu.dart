@@ -50,7 +50,7 @@ class _MenuState extends State<Menu> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: List.generate(menuItems.length, (index) => buildMenuItem(index))
+          children: List.generate(menuItems.length, (index) => buildMenuItem(size, index))
         )
       ),
       tablet: Container(
@@ -75,7 +75,7 @@ class _MenuState extends State<Menu> {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: List.generate(menuItems.length, (index) => buildMenuItem(index))
+              children: List.generate(menuItems.length, (index) => buildMenuItem(size, index))
           )
       ),
       desktop: Container(
@@ -95,21 +95,20 @@ class _MenuState extends State<Menu> {
               )
             ]
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox.shrink(),
-            ...List.generate(
-                menuItems.length, (index) => buildMenuItem(index)
-            ),
-            SizedBox.shrink()
-          ]
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          child: ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: menuItems.length,
+              itemBuilder: (_, int index) => buildMenuItem(size, index)
+          )
         )
       )
     );
   }
 
-  Widget buildMenuItem(int index){
+  Widget buildMenuItem(Size size, int index){
     return Responsive(
         mobile: InkWell(
             onTap: (){
@@ -153,52 +152,55 @@ class _MenuState extends State<Menu> {
                 )
             )
         ),
-        desktop: InkWell(
-          onTap: () {
-            setState(() {
-              selectedIndex = index;
+        desktop: Container(
+            constraints: BoxConstraints(maxWidth: (size.width * 0.5 - kDefaultPadding * 2) / menuItems.length),
+            width: double.infinity,
+            child: InkWell(
+                onTap: () {
+                  setState(() {
+                    selectedIndex = index;
 
-              widget.controllerScroll.animateTo(
-                  _getPosition(index),
-                  curve: Curves.easeOut,
-                  duration: const Duration(milliseconds: 300)
-              );
-            });
-          },
-          onHover: (value) {
-            setState(() {
-              value ? hoverIndex = index : hoverIndex = selectedIndex;
-            });
-          },
-          child: Container(
-            height: 100,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Text(
-                  menuItems[index],
-                  style: TextStyle(fontSize: 20, color: Color(0xFF707070)),
-                ),
-                // Hover
-                AnimatedPositioned(
-                  duration: Duration(milliseconds: 200),
-                  left: 0,
-                  right: 0,
-                  bottom:
-                  selectedIndex != index && hoverIndex == index ? -20 : -32,
-                  child: Image.asset("assets/images/hover.png"),
-                ),
-                // Select
-                AnimatedPositioned(
-                  duration: Duration(milliseconds: 200),
-                  left: 0,
-                  right: 0,
-                  bottom: selectedIndex == index ? -2 : -32,
-                  child: Image.asset("assets/images/hover.png"),
-                ),
-              ],
-            ),
-          )
+                    widget.controllerScroll.animateTo(
+                        _getPosition(index),
+                        curve: Curves.easeOut,
+                        duration: const Duration(milliseconds: 300)
+                    );
+                  });
+                },
+                onHover: (value) {
+                  setState(() {
+                    value ? hoverIndex = index : hoverIndex = selectedIndex;
+                  });
+                },
+                child: Container(
+                  height: 100,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Text(
+                        menuItems[index],
+                        style: TextStyle(fontSize: 20, color: Color(0xFF707070)),
+                      ),
+                      // Hover
+                      AnimatedPositioned(
+                        duration: Duration(milliseconds: 200),
+                        left: 0,
+                        right: 0,
+                        bottom: selectedIndex != index && hoverIndex == index ? -20 : -55,
+                        child: Image.asset("assets/images/hover.png"),
+                      ),
+                     // Select
+                      AnimatedPositioned(
+                        duration: Duration(milliseconds: 200),
+                        left: 0,
+                        right: 0,
+                        bottom: selectedIndex == index ? -20 : -55,
+                        child: Image.asset("assets/images/hover.png"),
+                      )
+                    ]
+                  )
+                )
+            )
         )
     );
   }

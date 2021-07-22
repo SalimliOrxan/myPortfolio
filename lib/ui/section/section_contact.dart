@@ -248,7 +248,7 @@ class ContactForm extends StatelessWidget {
                               ),
                               child: Row(
                                   children: [
-                                    Image.asset("assets/images/contact_icon.png", height: 40),
+                                    WebsafeSvg.asset("assets/images/ic_send.svg", height: 40),
                                     SizedBox(width: 5),
                                     Text(
                                         "Contact Me!",
@@ -337,7 +337,7 @@ class ContactForm extends StatelessWidget {
                               ),
                               child: Row(
                                   children: [
-                                    Image.asset("assets/images/contact_icon.png", height: Responsive.isMobile(context) ? 20 : 40),
+                                    WebsafeSvg.asset("assets/images/ic_send.svg", height: Responsive.isMobile(context) ? 20 : 40),
                                     SizedBox(width: Responsive.isMobile(context) ? 5 : 20),
                                     Text(
                                         "Contact Me!",
@@ -427,7 +427,7 @@ class ContactForm extends StatelessWidget {
                               ),
                               child: Row(
                                   children: [
-                                    Image.asset("assets/images/contact_icon.png", height: Responsive.isMobile(context) ? 20 : 40),
+                                    WebsafeSvg.asset("assets/images/ic_send.svg", height: Responsive.isMobile(context) ? 20 : 40),
                                     SizedBox(width: Responsive.isMobile(context) ? 5 : 20),
                                     Text(
                                         "Contact Me!",

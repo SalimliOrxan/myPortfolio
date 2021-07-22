@@ -61,7 +61,7 @@ class SectionService extends StatelessWidget {
                         ),
                         shrinkWrap: true,
                         itemBuilder: (_, int index) => ServiceCard(index: index)
-                    ),
+                    )
                   )
                 ]
             )

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/data/constants.dart';
 import 'package:my_portfolio/ui/responsive.dart';
+import 'package:websafe_svg/websafe_svg.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
@@ -27,7 +28,7 @@ class DefaultButton extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.asset(imageSrc, height: Responsive.isMobile(context) ? 20 : 40),
+          WebsafeSvg.asset(imageSrc, height: Responsive.isMobile(context) ? 20 : 40),
           SizedBox(width: Responsive.isMobile(context) ? 5 : 20),
           Text(
             text,

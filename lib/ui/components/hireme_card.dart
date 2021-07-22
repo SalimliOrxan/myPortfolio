@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/data/constants.dart';
 import 'package:my_portfolio/ui/responsive.dart';
+import 'package:websafe_svg/websafe_svg.dart';
 
 import 'default_button.dart';
 
@@ -28,11 +29,7 @@ class HireMeCard extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Image.asset(
-                  "assets/images/email.png",
-                  height: 30,
-                  width: 30,
-                ),
+                WebsafeSvg.asset('assets/images/ic_email.svg', height: 30, width: 30),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
                   child: SizedBox(
@@ -58,7 +55,7 @@ class HireMeCard extends StatelessWidget {
                 ),
                 DefaultButton(
                   text: "Hire Me!",
-                  imageSrc: "assets/images/hand.png",
+                  imageSrc: "assets/images/ic_handshake.svg",
                   press: () {},
                 )
               ]
@@ -77,8 +74,8 @@ class HireMeCard extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Image.asset(
-                "assets/images/email.png",
+              WebsafeSvg.asset(
+                "assets/images/ic_email.svg",
                 height: 50,
                 width: 50
               ),
@@ -107,11 +104,11 @@ class HireMeCard extends StatelessWidget {
               ),
               DefaultButton(
                 text: "Hire Me!",
-                imageSrc: "assets/images/hand.png",
+                imageSrc: "assets/images/ic_handshake.svg",
                 press: () {},
               )
             ],
-          ),
+          )
         ),
         desktop: Container(
           padding: EdgeInsets.all(kDefaultPadding * 2),
@@ -125,10 +122,10 @@ class HireMeCard extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Image.asset(
-                "assets/images/email.png",
-                height: 80,
-                width: 80,
+              WebsafeSvg.asset(
+                  "assets/images/ic_email.svg",
+                  height: 80,
+                  width: 80
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -155,7 +152,7 @@ class HireMeCard extends StatelessWidget {
               ),
               DefaultButton(
                 text: "Hire Me!",
-                imageSrc: "assets/images/hand.png",
+                imageSrc: "assets/images/ic_handshake.svg",
                 press: () {},
               )
             ],
