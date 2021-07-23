@@ -35,7 +35,7 @@ class HireMeCard extends StatelessWidget {
                   child: SizedBox(
                     height: 30,
                     child: VerticalDivider(),
-                  ),
+                  )
                 ),
                 Expanded(
                   child: Column(
@@ -97,10 +97,10 @@ class HireMeCard extends StatelessWidget {
                     SizedBox(height: kDefaultPadding / 2),
                     Text(
                       "Get an estimate for the new project",
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200),
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200)
                     )
-                  ],
-                ),
+                  ]
+                )
               ),
               DefaultButton(
                 text: "Hire Me!",

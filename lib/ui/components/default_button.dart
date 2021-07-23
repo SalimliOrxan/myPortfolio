@@ -16,23 +16,25 @@ class DefaultButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return TextButton(
       onPressed: () => press(),
       style: TextButton.styleFrom(
         backgroundColor: Color(0xFFE8F0F9),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         padding: EdgeInsets.symmetric(
-          vertical: Responsive.isMobile(context) ? 10 : kDefaultPadding,
-          horizontal: Responsive.isMobile(context) ? 10 : kDefaultPadding * 2.5,
+          vertical: Responsive.isMobile(context) ? kDefaultPadding / 1.3 : kDefaultPadding,
+          horizontal: Responsive.isMobile(context) ? kDefaultPadding : kDefaultPadding * 2.5,
         )
       ),
       child: Row(
         children: [
           WebsafeSvg.asset(imageSrc, height: Responsive.isMobile(context) ? 20 : 40),
-          SizedBox(width: Responsive.isMobile(context) ? 5 : 20),
+          SizedBox(width: Responsive.isMobile(context) ? 10 : 20),
           Text(
             text,
-            style: TextStyle(fontSize: 10)
+            style: TextStyle(fontSize: size.width * 0.023)
           )
         ]
       )
