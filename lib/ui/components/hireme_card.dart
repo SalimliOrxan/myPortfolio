@@ -25,16 +25,17 @@ class HireMeCard extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [kDefaultShadow],
+              boxShadow: [kDefaultShadow]
             ),
             child: Row(
               children: [
                 WebsafeSvg.asset('assets/images/ic_email.svg', height: 30, width: 30),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
-                  child: SizedBox(
+                  child: Container(
                     height: 30,
-                    child: VerticalDivider(),
+                    width: 0.1,
+                    color: Colors.grey
                   )
                 ),
                 Expanded(
@@ -81,10 +82,11 @@ class HireMeCard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                child: SizedBox(
-                  height: 50,
-                  child: VerticalDivider()
-                )
+                  child: Container(
+                      height: 50,
+                      width: 0.5,
+                      color: Colors.grey
+                  )
               ),
               Expanded(
                 child: Column(
@@ -129,10 +131,11 @@ class HireMeCard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                child: SizedBox(
-                  height: 80,
-                  child: VerticalDivider(),
-                ),
+                  child: Container(
+                      height: 80,
+                      width: 0.5,
+                      color: Colors.grey
+                  )
               ),
               Expanded(
                 child: Column(
