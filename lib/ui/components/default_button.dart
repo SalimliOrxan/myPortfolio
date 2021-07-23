@@ -34,7 +34,7 @@ class DefaultButton extends StatelessWidget {
           SizedBox(width: Responsive.isMobile(context) ? 10 : 20),
           Text(
             text,
-            style: TextStyle(fontSize: size.width * 0.023)
+            style: TextStyle(fontSize: Responsive.isMobile(context) ? size.width * 0.023 : Responsive.isTablet(context) ? 15 : 20)
           )
         ]
       )

@@ -242,17 +242,17 @@ class ContactForm extends StatelessWidget {
                                 backgroundColor: Color(0xFFE8F0F9),
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
                                 padding: EdgeInsets.symmetric(
-                                  vertical: 20,
-                                  horizontal: 30
+                                  vertical: kDefaultPadding,
+                                  horizontal: kDefaultPadding
                                 )
                               ),
                               child: Row(
                                   children: [
-                                    WebsafeSvg.asset("assets/images/ic_send.svg", height: 40),
+                                    WebsafeSvg.asset("assets/images/ic_send.svg", height: 20),
                                     SizedBox(width: 5),
                                     Text(
                                         "Contact Me!",
-                                        style: TextStyle(fontSize: 10)
+                                        style: TextStyle(fontSize: size.width * 0.023)
                                     )
                                   ]
                               )
