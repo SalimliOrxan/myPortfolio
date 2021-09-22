@@ -24,13 +24,13 @@ class SectionAbout extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et',
+                      'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
                       style: TextStyle(
                           fontSize: Responsive.isMobile(context) ? 12 : 20, fontWeight: FontWeight.w200, color: Color(0xFF707070), height: 2),
-                    ),
+                    )
                   )
-                ),
-              ],
+                )
+              ]
             ),
             SizedBox(height: 20 * 3),
             Row(
@@ -39,7 +39,7 @@ class SectionAbout extends StatelessWidget {
                 MyOutlineButton(
                   imageSrc: "assets/images/ic_handshake.svg",
                   text: "Hire Me!",
-                  press: () {},
+                  press: () {}
                 )
               ]
             )

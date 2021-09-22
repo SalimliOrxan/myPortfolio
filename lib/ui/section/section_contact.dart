@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/ui/components/section_title.dart';
 import 'package:my_portfolio/ui/responsive.dart';
-import 'package:websafe_svg/websafe_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../items/card_social.dart';
 import '../../data/constants.dart';
@@ -56,19 +56,19 @@ class ContactBox extends StatelessWidget {
                     children: [
                       SocialCard(
                         color: Color(0xFFD9FFFC),
-                        icon: WebsafeSvg.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
                         name: 'aaa',
                         press: () {}
                       ),
                       SocialCard(
                         color: Color(0xFFE4FFC7),
-                        icon: WebsafeSvg.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
                         name: 'bbb',
                         press: () {},
                       ),
                       SocialCard(
                         color: Color(0xFFE8F0F9),
-                        icon: WebsafeSvg.asset("assets/images/ic_github.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_github.svg", width: 30, height: 30),
                         name: 'ccc',
                         press: () {},
                       )
@@ -97,19 +97,19 @@ class ContactBox extends StatelessWidget {
                     children: [
                       SocialCard(
                         color: Color(0xFFD9FFFC),
-                        icon: WebsafeSvg.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
                         name: 'aaa',
                         press: () {},
                       ),
                       SocialCard(
                         color: Color(0xFFE4FFC7),
-                        icon: WebsafeSvg.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
                         name: 'bbb',
                         press: () {},
                       ),
                       SocialCard(
                         color: Color(0xFFE8F0F9),
-                        icon: WebsafeSvg.asset("assets/images/ic_github.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_github.svg", width: 30, height: 30),
                         name: 'ccc',
                         press: () {},
                       )
@@ -138,19 +138,19 @@ class ContactBox extends StatelessWidget {
                     children: [
                       SocialCard(
                         color: Color(0xFFD9FFFC),
-                        icon: WebsafeSvg.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_linkedin.svg", width: 30, height: 30),
                         name: 'aaa',
                         press: () {},
                       ),
                       SocialCard(
                         color: Color(0xFFE4FFC7),
-                        icon: WebsafeSvg.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_gmail.svg", width: 30, height: 30),
                         name: 'bbb',
                         press: () {},
                       ),
                       SocialCard(
                         color: Color(0xFFE8F0F9),
-                        icon: WebsafeSvg.asset("assets/images/ic_github.svg", width: 30, height: 30),
+                        icon: SvgPicture.asset("assets/images/ic_github.svg", width: 30, height: 30),
                         name: 'ccc',
                         press: () {},
                       )
@@ -248,7 +248,7 @@ class ContactForm extends StatelessWidget {
                               ),
                               child: Row(
                                   children: [
-                                    WebsafeSvg.asset("assets/images/ic_send.svg", height: 20),
+                                    SvgPicture.asset("assets/images/ic_send.svg", height: 20),
                                     SizedBox(width: 5),
                                     Text(
                                         "Contact Me!",
@@ -337,7 +337,7 @@ class ContactForm extends StatelessWidget {
                               ),
                               child: Row(
                                   children: [
-                                    WebsafeSvg.asset("assets/images/ic_send.svg", height: Responsive.isMobile(context) ? 20 : 40),
+                                    SvgPicture.asset("assets/images/ic_send.svg", height: Responsive.isMobile(context) ? 20 : 40),
                                     SizedBox(width: Responsive.isMobile(context) ? 5 : 20),
                                     Text(
                                         "Contact Me!",
@@ -427,7 +427,7 @@ class ContactForm extends StatelessWidget {
                               ),
                               child: Row(
                                   children: [
-                                    WebsafeSvg.asset("assets/images/ic_send.svg", height: Responsive.isMobile(context) ? 20 : 40),
+                                    SvgPicture.asset("assets/images/ic_send.svg", height: Responsive.isMobile(context) ? 20 : 40),
                                     SizedBox(width: Responsive.isMobile(context) ? 5 : 20),
                                     Text(
                                         "Contact Me!",

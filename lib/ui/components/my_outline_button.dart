@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/data/constants.dart';
 import 'package:my_portfolio/ui/responsive.dart';
-import 'package:websafe_svg/websafe_svg.dart';
 
 class MyOutlineButton extends StatelessWidget {
   const MyOutlineButton({
@@ -30,7 +30,7 @@ class MyOutlineButton extends StatelessWidget {
         ),
         child: Row(
           children: [
-            WebsafeSvg.asset(imageSrc, height: Responsive.isMobile(context) ? 20 : 40),
+            SvgPicture.asset(imageSrc, height: Responsive.isMobile(context) ? 20 : 40),
             SizedBox(width: Responsive.isMobile(context) ? 10 : 20),
             Text(text)
           ]
